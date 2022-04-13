@@ -1,0 +1,33 @@
+<idea-plugin>
+    <id>br.com.antoniohbmonteiro.MyPlugin</id>
+    <name>MyPlugin</name>
+    <vendor email="antoniohbmonteiro@gmail.com" url="https://github.com/antoniohbmonteiro">My Github</vendor>
+
+    <description><![CDATA[
+    Simple Plugin for my templates (mvvm, activity, initial structure)
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup
+                id="myActionId"
+                displayType="BALLOON"/>
+    </extensions>
+
+    <actions>
+        <group id="MyPlugin.TopMenu"
+               text="My New Plugin"
+               description="My plugin toolbar menu">
+            <action class="br.com.antoniohbmonteiro.myplugin.actions.HelloWorldAction"
+                    id="DemoAction"
+                    text="This Is a Text Action"
+                    description="A test action tha shows a notification">
+                <keyboard-shortcut first-keystroke="control alt p" keymap="$default"/>
+            </action>
+            <add-to-group group-id="MainMenu" anchor="last"/>
+        </group>
+    </actions>
+</idea-plugin>
